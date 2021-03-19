@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+User.delete_all
+UserLocation.delete_all
+
+juan = User.create(username: 'thejuanandonly', password: '123', email: 'juan@yahoo.com')
+
+
+# Geocoder.search('San Francisco')[0].data["address"]["city"]
+# cities = Geocoder.search('San Francisco').map{|city| city.data["display_name"]}.uniq
