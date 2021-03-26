@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :locations, only: [:index]
   resources :user_locations
   resources :users
 

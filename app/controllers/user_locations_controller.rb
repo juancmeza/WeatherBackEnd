@@ -5,7 +5,6 @@ class UserLocationsController < ApplicationController
       render json: user_locations
   end
   
-  
   def show
       user_location = UserLocation.find_by(id: params[:id])
       render json: user_location
@@ -28,7 +27,7 @@ class UserLocationsController < ApplicationController
   end
 
   def render_request
-      # byebug
+      byebug
       lat_long = Geocoder.search(params[:name])
       longitude = lat_long[0].data["lon"]
       latitude = lat_long[0].data["lat"]
