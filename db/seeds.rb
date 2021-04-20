@@ -12,7 +12,7 @@ UserLocation.delete_all
 
 juan = User.create(username: 'thejuanandonly', password: '123', email: 'juan@yahoo.com')
 
-berkeley = UserLocation.create(city: "Berkeley, CA, USA", latitude: 37.8715226, longitude: -122.273042, user_id: juan.id)
+berkeley = UserLocation.create(city: "Berkeley", latitude: 37.8715226, longitude: -122.273042, user_id: juan.id)
 
 
 # Geocoder.search('San Francisco')[0].data["address"]["city"]
