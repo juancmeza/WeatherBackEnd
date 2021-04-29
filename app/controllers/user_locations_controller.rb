@@ -11,6 +11,7 @@ class UserLocationsController < ApplicationController
   end
 
   def create
+      debugger
       user_location = UserLocation.create(user_location_params)
       render json: user_location
   end
