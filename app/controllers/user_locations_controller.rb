@@ -11,16 +11,15 @@ class UserLocationsController < ApplicationController
   end
 
   def create
-      debugger
-      user_location = UserLocation.create(user_location_params)
+      user_location = UserLocation.create(city: params[:user_location][:city], latitude: params[:user_location][:latitude], longitude: params[:user_location][:longitude], user_id: params[:user_location][:user_id])
       render json: user_location
   end
 
-  def update
-      user_location = UserLocation.find_by(id: params[:id])
-      user_location.update(default: user_location.default)
-      render json: user_location
-  end
+  # def update
+  #     user_location = UserLocation.find_by(id: params[:id])
+  #     user_location.update(default: user_location.default)
+  #     render json: user_location
+  # end
 
   def destroy
       user_location = UserLocation.find_by(id: params[:id])
