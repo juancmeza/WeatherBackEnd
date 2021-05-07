@@ -16,7 +16,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    
       user = User.find_by(id: params[:id])
       user.update(email: user_params[:email], username: user_params[:username], password: user_params[:password])
       render json: user
@@ -30,7 +29,9 @@ class UsersController < ApplicationController
 
   def login
     user = User.find_by(username: user_params[:username], password: user_params[:password])
-    render json: user
+    if user then
+      render json: user
+    end
   end
 
   private
