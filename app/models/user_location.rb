@@ -1,19 +1,13 @@
-# require_relative '../.apiKey.rb'
+require 'dotenv'
+Dotenv.load
 
 class UserLocation < ApplicationRecord
 
   belongs_to :user
 
-  # def self.get_request(latitude, longitude)
-  #   # api = ENV["WEATHER_API_KEY"]
-  #   url = "https://api.openweathermap.org/data/2.5/onecall?lat=#{latitude}&lon=#{longitude}&units=imperial&exclude={part}&appid=#{$api_key}"
-  #   JSON.parse(RestClient.get(url))
-  # end
-
   def self.get_request(latitude, longitude)
-    # api = ENV["WEATHER_API_KEY"]
-    # byebug
-    url = "https://api.openweathermap.org/data/2.5/onecall?lat=#{latitude}&lon=#{longitude}&units=imperial&exclude={part}&appid="
+    api = ENV["WEATHER_API_KEY"]
+    url = "https://api.openweathermap.org/data/2.5/onecall?lat=#{latitude}&lon=#{longitude}&units=imperial&exclude={part}&appid=#{api}"
     JSON.parse(RestClient.get(url))
   end
 

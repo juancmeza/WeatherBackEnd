@@ -32,3 +32,4 @@
 
 # Ignore file with API key
 /.apiKey.rb
+.env
